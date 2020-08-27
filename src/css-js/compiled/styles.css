@@ -1248,8 +1248,12 @@ hr {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
 }
-.cover .cronometro > div p, .cover .cronometro > div span {
+.cover .cronometro > div p {
   margin: 0px;
+}
+.cover .cronometro > div span {
+  font-weight: 700;
+  font-size: 1rem;
 }
 .cover .promo {
   margin: 3rem auto;
