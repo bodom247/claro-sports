@@ -1,0 +1,38 @@
+.footer
+  padding: 1rem 0px
+  ul
+    +flex
+    +flexWrap
+    +justifyCont
+    li
+      font-size: 0.8125rem
+      font-weight: 800
+      letter-spacing: 0.5px
+      &:last-of-type
+        a
+          &:after
+            display: none
+      a
+        font-weight: 800
+        letter-spacing: 0.5px
+        &:after
+          content: "|"
+          margin: 0px 0.5rem
+  .sochi
+    margin: auto
+  .redesSociales
+    margin-left: auto
+
+@mixin ndFooter-smartphone
+  .footer
+    ul
+      display: block
+      margin-bottom: 1rem
+      li
+        text-align: center
+        padding: 0.5rem 0px
+        a
+          &:after
+            display: none
+    .redesSociales
+      margin: 2rem auto

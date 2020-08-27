@@ -1,0 +1,34 @@
+// Grid Apps
+.gridApps
+	+flex
+	margin: 2rem auto
+	.multimedia
+		position: relative
+		min-height: 500px
+		width: 100%
+		i
+			background: $Razzmatazz
+			display: none
+			height: 100%
+			left: 0px
+			mix-blend-mode: overlay	
+			position: absolute
+			top: 0px
+			width: 100%
+			z-index: 2	
+		&:hover
+			> img
+				+scale(1.08,1.08)
+		> img
+			+filter(1, 100%, 50%)
+	.logo
+		+center(vh)
+		z-index: 3
+
+// Responsive Smartphone
+@mixin gridApps-smartphone
+	// Grid Apps
+	.gridApps
+		+flexDir
+		.multimedia
+			min-height: inherit

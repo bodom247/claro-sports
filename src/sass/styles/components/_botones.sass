@@ -1,0 +1,57 @@
+// Botones
+.botones
+	display: table
+	margin: auto
+	.boton
+		display: inline-block
+		margin: 1.25rem 0.5rem
+		min-width: auto
+.boton
+	+bx
+	+fx(all,0.5s)
+	border-radius: 70px
+	border: 1px solid $MineShaft
+	clear: both
+	color: $MineShaft
+	cursor: pointer
+	display: table
+	font-size: 0.625rem
+	font-weight: 500
+	line-height: 1.2
+	margin: 1.25rem auto
+	min-width: 120px
+	padding: 10px 1rem
+	position: relative
+	text-align: center
+	text-decoration: none
+	text-transform: uppercase
+	&:hover
+		background: $Razzmatazz
+		border: 1px solid $Razzmatazz
+		color: $White
+	&.secundario
+		border: 1px solid $White
+		color: $White
+		&:hover
+			background: $White
+			border: 1px solid $White
+			color: $Razzmatazz
+	&.disabled
+		cursor: default
+		&:hover
+			+shadowr
+	&.right
+		margin: 1.25rem 0px
+	&.left
+		margin: 1.25rem 0px
+
+// Responsive Smartphone
+@mixin botones-smartphone
+	// Botones
+	.boton
+		&.right
+			margin: 1.25rem auto
+			float: none!important
+		&.left
+			margin: 1.25rem auto
+			float: none!important

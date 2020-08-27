@@ -1,0 +1,17 @@
+block var
+
+include mixines.pug
+include variables.pug
+
+//- index.pug
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include head.pug
+
+	body
+		include header.pug
+		
+		main.wrapper
+			block content
+			
+		include footer.pug

@@ -1,0 +1,71 @@
+extends includes/layout.pug
+
+block var
+	- var location = "home";
+	- var subLoc1 = " ";
+	- var subLoc2 = " ";
+	- var titulo = "Boilerplate Nativo";
+	- var descrip = "";
+	- var keyword = "";
+
+block content
+	section.cover
+		.container
+			.grid
+				.col-lg-12.col-xs-12.algCenter.jusCenter.textWhite
+					.contInfo
+						.info
+							h2 
+								strong FALTAN
+							.cronometro
+								.dias
+									#dias 
+									p DIAS
+								.horas
+									#horas 
+									p HRS
+								.min
+									#minutos 
+									p MIN
+								.seg
+									#segundos 
+									p SEG
+							.promo
+								.multimedia
+									.codigoYoutube(data-youtube="mAinJyxqrBY")
+
+	section.sports
+		.container
+			.grid.jusCenter
+				.col-lg-12.col-xs-12.algText
+					h2 CLARO SPORTS EN SOCHI 2014
+				.col-lg-10.col-xs-12
+					.grid
+						.col-lg-3.col-xs-12.circulo(data-codigo="mAinJyxqrBY")
+							.img
+								img(src="images/team-latam.png")
+								.texto
+									p Los deportistas latinoamericanos que participan en sochi 2014.
+							h4
+								strong TEAM LATAM
+						.col-lg-3.col-xs-12.circulo(data-codigo="gVUs4oFKJmY")
+							.img
+								img(src="images/travel-meets-fashion.png")
+								.texto
+									p Los deportistas latinoamericanos que participan en sochi 2014.
+							h4
+								strong TRAVEL MEETS FASHIO
+						.col-lg-3.col-xs-12.circulo(data-codigo="aQLDxUY_wjs")
+							.img
+								img(src="images/velocidad-riesgo.png")
+								.texto
+									p Los deportistas latinoamericanos que participan en sochi 2014.
+							h4
+								strong VELOCIDAD Y RIESGO
+						.col-lg-3.col-xs-12.circulo(data-codigo="qBe17SnzI2s")
+							.img
+								img(src="images/experiencia.png")
+								.texto
+									p Los deportistas latinoamericanos que participan en sochi 2014.
+							h4
+								strong EXPERIENCIA MULTIMEDIA

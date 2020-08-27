@@ -1,0 +1,68 @@
+//-Bebidas
+mixin bebidas(arreglo)
+	.grid.bebidas.jusC
+		each val, index in arreglo
+			-var ind = index +1
+			.col-lg-3
+				a(href=""+ val.url +".html")
+					img(src="images/mezclabilidad/" + val.img + ".png" alt="", width="130")
+mixin sales(array)
+	.grid.bebidas.jusC
+		each val, index in array
+			-var ind = index +1
+			.col-lg-3
+				a(href=""+ val.url +".html")
+					img(src="images/mezclabilidad/" + val.img + ".png" alt="", width="130")
+
+//-Section
+mixin section(items)
+	section(class=items.claseSect)
+		.container
+			.grid(class=items.claseGrid)
+				block
+//-Producto
+mixin producto(items)
+	.producto(class=items.clases)
+		.imgProducto
+			ul
+				each val, index in items.imagenes
+					-var ind = index +1
+					li
+						img(src="images/productos/" + val.img + ".png" alt="")
+		.info
+			h5
+				strong= items.titulo
+			if titulo2 == ""
+			else
+				h6= items.titulo2
+			p= items.texto
+			ul.especificacion
+				each val, index in items.especificacion
+					-var ind = index +1
+						li= val.tex1 + ": "
+							span= val.tex2
+			.precio= "$" + items.precio + ".00"
+			a(href=items.urlBoton target="_blank" title="Ver más").boton.left Ver más
+
+//-Notas
+mixin notas(items)
+	.notas(class=items.clases)
+		.img
+			a(href=items.urlLink title=items.img)
+				img(src="images/blog/" + items.img + ".jpg" alt="")
+		.info
+			a(href=items.urlLink title=items.titulo)
+				h5
+					strong= items.titulo
+			.fecha= items.fecha
+			p= items.texto
+			a(href=items.urlLink title="Leer").link.left Leer
+
+
+//-Paginador
+mixin paginador(arreglo)
+	ul.pagination
+		each val, index in arreglo
+			-var ind = index +1
+			li(class=val.clase)
+				a(href="#" title=val.nombre) #{val.nombre}

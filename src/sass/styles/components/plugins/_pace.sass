@@ -1,0 +1,34 @@
+// Pace
+.pace
+	-moz-user-select: none
+	-webkit-pointer-events: none
+	-webkit-user-select: none
+	background: $Black
+	height: 100vh
+	left: 0px
+	pointer-events: none
+	position: fixed
+	top: 0px
+	user-select: none
+	width: 100vw
+	z-index: 9999
+	.pace-activity
+		+center(vh)
+		&:before
+			+fonIco('\e901')
+			color: $Razzmatazz
+			font-size: 50px
+		&:after
+			+fonIco('\e900')
+			color: $White
+			font-size: 50px
+			margin: 0px 0.5rem
+
+.pace .pace-progress
+	background: $Razzmatazz
+	height: 3px
+	position: fixed
+	right: 100%
+	top: 0
+	width: 100%
+	z-index: 2000

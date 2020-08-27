@@ -1,0 +1,252 @@
+// Materialize
+
+// Parallax
+.parallax-container
+	+bx
+	border: 8px solid $White
+	height: 350px
+	margin-bottom: 2.5rem
+	.parallax
+		img
+			min-width: auto
+			width: 100%
+			max-width: 1440px
+			margin: 0px
+
+// Pagination
+// main
+// 	ul:not(.pagination):not(.subMenu):not(.slick-dots), ol:not(.pagination):not(.subMenu):not(.slick-dots)
+// 		list-style-type: disc
+// 		margin: 1.25rem 0px
+// 		padding-left: 1.5rem
+// 		li
+// 			color: $MineShaft
+// 			font-size: 1rem
+// 			font-weight: 300
+// 			line-height: 1.2
+// 			list-style-type: inherit
+// 			strong 
+// 				font-weight: 700
+// 			ul
+// 				list-style-type: circle
+// 				margin: 0px
+// 	ol:not(.pagination):not(.subMenu):not(.slick-dots)
+// 		list-style-type: decimal
+
+.pagination
+	clear: both
+	display: table
+	margin: 0px auto 1.625rem
+	width: auto!important
+	li
+		width: auto!important
+		&.disabled, &.disabled.prev, &.disabled.next
+			a
+				color: $Alto
+		&.active
+			background-color: inherit
+			border: none
+			a
+				color: $Razzmatazz
+				&:after
+					+center(v)
+					border: 1px solid $Razzmatazz
+					bottom: 0px
+					content: " "
+					margin-bottom: 5px
+					width: 70%
+		a
+			color: $Alto
+			font-size: 1rem
+			position: relative
+			&:hover
+				color: $Razzmatazz
+		&.prev, &.next
+			a
+				color: $Razzmatazz
+				display: block
+				height: 100%
+				margin: 0px 5px
+				&:before
+					+center(vh)
+		&.prev
+			a
+				&:before
+					+fonIco('\e909')
+		&.next
+			a
+				&:before
+					+fonIco('\e907')
+	&.right
+		margin: 1.25rem 0px
+	&.left
+		margin: 1.25rem 0px
+
+// Formulario
+input, [type=reset], [type=submit], [type=button]
+	+appearance
+	background: none
+	border: none
+	cursor: pointer
+	&:focus
+		outline-width: 0
+
+input, textarea
+	&::-webkit-input-placeholder
+		color: $Black
+	/* Firefox 18- */
+	&:-moz-placeholder
+		color: $Black
+	/* Firefox 19+ */
+	&::-moz-placeholder  
+		color: $Black
+	&:-ms-input-placeholder
+		color: $Black
+
+.input-field
+	margin-top: 0px
+	input.select-dropdown
+		line-height: inherit
+		text-transform: uppercase
+	// label color
+	label
+		+translate(0px, 0px)
+		bottom: inherit
+		color: $MineShaft
+		font-size: 13px
+		padding: 5px 0px
+		text-transform: uppercase
+	input
+		&:not([type]), &[type=date]:not(.browser-default), &[type=datetime-local]:not(.browser-default), &[type=datetime]:not(.browser-default), &[type=email]:not(.browser-default), &[type=number]:not(.browser-default), &[type=password]:not(.browser-default), &[type=search]:not(.browser-default), &[type=tel]:not(.browser-default), &[type=text]:not(.browser-default), &[type=time]:not(.browser-default), &[type=url]:not(.browser-default)
+			+bx
+			border-bottom: 1px solid $MineShaft
+			box-shadow: none!important
+			color: $MineShaft
+			font-size: 13px
+			height: auto
+			margin: 0px
+			margin-top: 5px
+			padding: 6px 0px
+			&:focus:not([readonly])
+				border-bottom: 1px solid $MineShaft
+				+ label
+					color: $MineShaft
+			// valid color
+			&.valid
+				border-bottom: 1px solid $Valid
+				&:focus:not([readonly])
+					border-bottom: 1px solid $Valid
+					+ label
+						color: $Valid
+			// invalid color
+			&.invalid
+				border-bottom: 1px solid $Invalid
+				&:focus:not([readonly])
+					border-bottom: 1px solid $Invalid
+					+ label
+						color: $Invalid
+
+	textarea.materialize-textarea
+		+bx
+		border-bottom: 1px solid $MineShaft
+		box-shadow: none!important
+		color: $MineShaft
+		font-size: 13px
+		height: auto
+		margin: 0px
+		padding: 6px 0px
+		&:focus:not([readonly])
+			border-bottom: 1px solid $MineShaft
+			+ label
+				color: $MineShaft
+		// valid color
+		&.valid
+			border-bottom: 1px solid $Valid
+			&:focus:not([readonly])
+				border-bottom: 1px solid $Valid
+				+ label
+					color: $Valid
+		// invalid color
+		&.invalid
+			border-bottom: 1px solid $Invalid
+			&:focus:not([readonly])
+				border-bottom: 1px solid $Invalid
+				+ label
+					color: $Invalid
+
+	textarea
+		min-height: 150px
+	
+	.helper-text
+		text-transform: uppercase
+	.character-counter
+		bottom: 0px
+		position: absolute
+		right: 0px
+
+	[type=checkbox]
+		// valid color
+		&.valid
+			~ span
+				&.helper-text
+					&:after
+						content: attr(data-success)
+						color: $Valid
+		&:checked 
+			+ span:not(.lever):before
+				border-top: 2px solid transparent
+				border-left: 2px solid transparent
+				border-right: 2px solid $Valid
+				border-bottom: 2px solid $Valid
+		// invalid color
+		&.invalid
+			+ span:not(.lever):before, &:not(.filled-in) + span:not(.lever):after
+				border: 2px solid $Invalid
+			~ span
+				&.helper-text
+					&:after
+						content: attr(data-error)
+						color: $Invalid
+
+	[type=radio]
+		// valid color
+		&.valid
+			~ span
+				&.helper-text
+					margin-top: 10px
+					&:after
+						content: attr(data-success)
+						color: $Valid
+		&.with-gap:checked + span
+			&:after, &:before
+				border: 2px solid $Valid
+		&:checked + span:after, &.with-gap:checked + span:after, &:checked + span:after
+			background-color: $Valid
+		&.with-gap:checked + span
+			&:after, &:before
+				border: 2px solid $Valid
+		&:checked + span:after
+			background-color: $Valid
+		// invalid color
+		&:not(:checked)
+			&.invalid
+				+ span
+					&:after, &:before
+						border: 2px solid $Invalid
+				~ span
+					&.helper-text
+						margin-top: 10px
+						&:after
+							content: attr(data-error)
+							color: $Invalid
+
+// Responsive Smartphone
+@mixin pagination-smartphone
+	// Parallax
+	.parallax-container
+		height: auto
+		min-height: 190px
+		.parallax
+			position: inherit
+			img
+				position: inherit
