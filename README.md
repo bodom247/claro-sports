@@ -1,4 +1,4 @@
-# Nativo Digital Boilerplate FrontEnd
+# Claro Sports FrontEnd
 
 Basic structure to start web project layout
 
