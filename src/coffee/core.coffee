@@ -14,6 +14,8 @@ root.init = ->
 	core = null
 	windowAlto = $( window ).outerHeight()
 
+	comparar = null
+
 	if $(window).width() <= 767
 		core = true
 	else
@@ -104,18 +106,17 @@ root.init = ->
 
 	$('.circulo').on 'click', ->
 		codigo = $(this).attr 'data-codigo'
+
+		if comparar != codigo
+			$('.promo .multimedia').empty()
+			$('.promo .multimedia').append('<div class="codigoYoutube" data-youtube='+codigo+'></div>')
+			videoYoutube()
+			console.log(codigo)
+			comparar = codigo
+
 		if !$(this).children('.img').hasClass('activo')
 			$('.circulo .img').removeClass 'activo'
-			console.log(codigo)	
 		$(this).children('.img').toggleClass 'activo'
-		return
-
-	$('.acordeon dt').on 'click', ->
-		if !$(this).hasClass('activo')
-			$('.acordeon dt').removeClass 'activo'
-			$('.acordeon dl dd').slideUp()
-		$(this).toggleClass 'activo'
-		$(this).parents('dl').children('dd').slideToggle()
 		return
 
 	inicio = ->

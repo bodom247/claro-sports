@@ -3,7 +3,7 @@ var root;
 root = typeof exports !== "undefined" && exports !== null ? exports : typeof window !== "undefined" && window !== null ? window : this;
 
 root.init = function() {
-  var core, cronometro, desktop, firstScriptTag, inicio, mobile, setSize, tag, url, windowAlto;
+  var comparar, core, cronometro, desktop, firstScriptTag, inicio, mobile, setSize, tag, url, windowAlto;
   tag = document.createElement('script');
   tag.src = '//www.youtube.com/iframe_api';
   firstScriptTag = document.getElementsByTagName('script')[0];
@@ -11,6 +11,7 @@ root.init = function() {
   url = 'http://' + document.location.hostname + '/';
   core = null;
   windowAlto = $(window).outerHeight();
+  comparar = null;
   if ($(window).width() <= 767) {
     core = true;
   } else {
@@ -94,19 +95,17 @@ root.init = function() {
   $('.circulo').on('click', function() {
     var codigo;
     codigo = $(this).attr('data-codigo');
+    if (comparar !== codigo) {
+      $('.promo .multimedia').empty();
+      $('.promo .multimedia').append('<div class="codigoYoutube" data-youtube=' + codigo + '></div>');
+      videoYoutube();
+      console.log(codigo);
+      comparar = codigo;
+    }
     if (!$(this).children('.img').hasClass('activo')) {
       $('.circulo .img').removeClass('activo');
-      console.log(codigo);
     }
     $(this).children('.img').toggleClass('activo');
-  });
-  $('.acordeon dt').on('click', function() {
-    if (!$(this).hasClass('activo')) {
-      $('.acordeon dt').removeClass('activo');
-      $('.acordeon dl dd').slideUp();
-    }
-    $(this).toggleClass('activo');
-    $(this).parents('dl').children('dd').slideToggle();
   });
   inicio = function() {
     setSize();
